@@ -1,0 +1,47 @@
+body {
+  margin: 10px;
+  padding: 0;
+  font: 12px "Open Sans", "Arial", serif;
+}
+
+.design1 button.switch {
+  border: 2px solid #333;
+  padding: 0px;
+  background: #222;
+  border-radius: 20px;
+  vertical-align: middle;
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  outline: none;
+  margin-right: 0.5em;
+}
+.design1 button.switch span {
+  pointer-events: none;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+.design1 button.switch:focus {
+  outline: 0;
+  box-shadow: 0px 1px 9px 0px #333;
+}
+.design1 button.switch:hover {
+  cursor: pointer;
+}
+.design1 [role=switch][aria-checked=false] :first-child,
+.design1 [role=switch][aria-checked=true] :last-child {
+  background-image: linear-gradient(to bottom right, #F20C46, #A40080);
+  color: #fff;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.design1 [role=switch][aria-checked=false] :last-child,
+.design1 [role=switch][aria-checked=true] :first-child {
+  color: #888;
+}
+.design1 label {
+  font-size: 16px;
+  user-select: none;
+  vertical-align: middle;
+}
+
+/*# sourceMappingURL=style.css.map */

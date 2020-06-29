@@ -1,0 +1,60 @@
+body {
+    margin: 10px;
+    padding: 0;
+    font: 12px "Open Sans", "Arial", serif;
+}
+
+$design1-gradient: #F20C46, #A40080;
+$color-white:#fff;
+$color-lightGrey: #888;
+$color-medGrey:#333;
+$color-darkGrey: #222;
+$label-font-size: 16px;
+
+.design1 {
+    button.switch {
+        border: 2px solid $color-medGrey;
+        padding:0px;
+        background:$color-darkGrey;
+        border-radius:20px;
+        vertical-align: middle;
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        outline:none;
+        margin-right:0.5em;
+
+        span {
+            pointer-events: none;
+            padding:10px 15px;
+            text-transform: uppercase;
+        }
+    }
+
+    button.switch:focus {
+        outline:0;
+        box-shadow: 0px 1px 9px 0px $color-medGrey;
+    }
+
+    button.switch:hover {
+        cursor: pointer;
+    }
+    
+    [role="switch"][aria-checked="false"] :first-child,
+    [role="switch"][aria-checked="true"] :last-child {
+        background-image: linear-gradient(to bottom right, $design1-gradient);
+        color: $color-white;
+        border-radius:20px;
+        font-weight: bold;
+    }
+    
+    [role="switch"][aria-checked="false"] :last-child,
+    [role="switch"][aria-checked="true"] :first-child {
+        color: $color-lightGrey;
+    }
+    
+    label {
+        font-size: $label-font-size;
+        user-select: none;
+        vertical-align: middle;
+    }
+}
