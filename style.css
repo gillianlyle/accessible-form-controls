@@ -4,7 +4,23 @@ body {
   font: 12px "Open Sans", "Arial", serif;
 }
 
-.design1 button.switch {
+section {
+  display: grid;
+}
+section h2 {
+  grid-column: 1/span 4;
+  grid-row: 1;
+}
+section .design {
+  margin: 20px 10px;
+  grid-template-columns: auto auto auto auto;
+}
+section .design label {
+  font-size: 16px;
+  user-select: none;
+  vertical-align: middle;
+}
+section .design-1 button.switch {
   border: 2px solid #333;
   padding: 0px;
   background: #222;
@@ -15,33 +31,160 @@ body {
   outline: none;
   margin-right: 0.5em;
 }
-.design1 button.switch span {
+section .design-1 button.switch span {
   pointer-events: none;
   padding: 10px 15px;
   text-transform: uppercase;
 }
-.design1 button.switch:focus {
+section .design-1 button.switch:focus {
   outline: 0;
   box-shadow: 0px 1px 9px 0px #333;
 }
-.design1 button.switch:hover {
+section .design-1 button.switch:hover {
   cursor: pointer;
 }
-.design1 [role=switch][aria-checked=false] :first-child,
-.design1 [role=switch][aria-checked=true] :last-child {
+section .design-1 [role=switch][aria-checked=false] :first-child,
+section .design-1 [role=switch][aria-checked=true] :last-child {
   background-image: linear-gradient(to bottom right, #F20C46, #A40080);
   color: #fff;
   border-radius: 20px;
   font-weight: bold;
 }
-.design1 [role=switch][aria-checked=false] :last-child,
-.design1 [role=switch][aria-checked=true] :first-child {
+section .design-1 [role=switch][aria-checked=false] :last-child,
+section .design-1 [role=switch][aria-checked=true] :first-child {
   color: #888;
 }
-.design1 label {
-  font-size: 16px;
-  user-select: none;
+section .design-2 button.switch {
+  border: 1px solid #ddd;
+  padding: 0px;
+  background: #f9f9f9;
+  border-radius: 5px;
   vertical-align: middle;
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  outline: none;
+  font-weight: bold;
+}
+section .design-2 button.switch span {
+  pointer-events: none;
+  padding: 15px;
+  text-transform: uppercase;
+}
+section .design-2 button.switch:focus {
+  outline: 0;
+  box-shadow: 3px 0px 21px 0px #ccc;
+}
+section .design-2 button.switch:hover {
+  cursor: pointer;
+}
+section .design-2 [role=switch][aria-checked=false] :first-child {
+  color: #fff;
+  background-image: linear-gradient(180deg, #D71414, #A30F0F);
+  border-radius: 3px 0px 0px 3px;
+  box-shadow: 1px 0px 5px 0px inset #950E0E;
+}
+section .design-2 [role=switch][aria-checked=false] :last-child {
+  color: transparent;
+  box-shadow: 1px 0px 5px 0px inset #ddd;
+}
+section .design-2 [role=switch][aria-checked=true] :last-child {
+  background-image: linear-gradient(180deg, #2E843E, #205B2B);
+  color: #fff;
+  border-radius: 0px 3px 3px 0px;
+  box-shadow: 1px 0px 5px 0px inset #163C1C;
+}
+section .design-2 [role=switch][aria-checked=true] :first-child {
+  color: transparent;
+  box-shadow: 1px 0px 5px 0px #ddd inset;
+}
+section .design-3 span.checkbox.switcher label input {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+section .design-3 span.checkbox.switcher label input:focus + span,
+section .design-3 span.checkbox.switcher label input:checked:focus + span {
+  outline: 0;
+  box-shadow: 0px 0px 9px -1px #ffca05fa, 0px 0px 7px -1px #777 inset;
+}
+section .design-3 span.checkbox.switcher label input + span {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  width: 65px;
+  height: 20px;
+  border-radius: 50px;
+  border: 1px solid #aaa;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  background: #ddd;
+  box-shadow: 0px 0px 7px -1px #777 inset;
+}
+section .design-3 span.checkbox.switcher label input + span small {
+  position: absolute;
+  display: block;
+  background: linear-gradient(45deg, #bbb, #fff);
+  box-shadow: 0px 0px 9px -1px #333;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  top: -6px;
+  width: 30px;
+  left: 4px;
+  height: 30px;
+  border: 1px solid #ddd;
+}
+section .design-3 span.checkbox.switcher label input:checked + span small {
+  background: linear-gradient(45deg, #497902, #7CCB02);
+  box-shadow: 0px 0px 9px -1px #333;
+  left: 40%;
+}
+section .design-4 span.checkbox.switcher label input {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+section .design-4 span.checkbox.switcher label input:focus + span,
+section .design-4 span.checkbox.switcher label input:checked:focus + span {
+  outline: 0;
+  box-shadow: 0px 0px 9px -1px #333, 0px 0px 9px -1px #999 inset;
+}
+section .design-4 span.checkbox.switcher label input + span {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  width: 75px;
+  height: 40px;
+  border-radius: 50px;
+  border: 1px solid #eee;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  background: #ddd;
+  box-shadow: 0px 0px 9px -1px #333 inset;
+}
+section .design-4 span.checkbox.switcher label input + span small {
+  position: absolute;
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  left: 1px;
+  top: 2px;
+  width: 36px;
+  height: 36px;
+}
+section .design-4 span.checkbox.switcher label input:checked + span {
+  background: #3596D7;
+  box-shadow: 1px 0px 5px 0px #6471ed inset;
+}
+section .design-4 span.checkbox.switcher label input:checked + span small {
+  background: #fff;
+  left: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */

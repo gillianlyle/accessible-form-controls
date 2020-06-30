@@ -5,56 +5,231 @@ body {
 }
 
 $design1-gradient: #F20C46, #A40080;
+$design2-toggleOff: #D71414, #A30F0F;
+$design2-toggleOn: #2E843E, #205B2B;
+$design2-box-shadow-inset: 1px 0px 5px 0px inset;
 $color-white:#fff;
 $color-lightGrey: #888;
 $color-medGrey:#333;
 $color-darkGrey: #222;
 $label-font-size: 16px;
 
-.design1 {
-    button.switch {
-        border: 2px solid $color-medGrey;
-        padding:0px;
-        background:$color-darkGrey;
-        border-radius:20px;
-        vertical-align: middle;
-        display: inline-grid;
-        grid-template-columns: auto auto;
-        outline:none;
-        margin-right:0.5em;
+section {
+    display:grid;
 
-        span {
-            pointer-events: none;
-            padding:10px 15px;
-            text-transform: uppercase;
+    h2 {
+        grid-column: 1 / span 4;
+        grid-row: 1;
+    }
+
+    .design {
+        margin:20px 10px;
+        grid-template-columns: auto auto auto auto;
+    
+        label {
+            font-size: $label-font-size;
+            user-select: none;
+            vertical-align: middle;
         }
     }
 
-    button.switch:focus {
-        outline:0;
-        box-shadow: 0px 1px 9px 0px $color-medGrey;
+    .design-1 {
+        button.switch {
+            border: 2px solid $color-medGrey;
+            padding:0px;
+            background:$color-darkGrey;
+            border-radius:20px;
+            vertical-align: middle;
+            display: inline-grid;
+            grid-template-columns: auto auto;
+            outline:none;
+            margin-right:0.5em;
+    
+            span {
+                pointer-events: none;
+                padding:10px 15px;
+                text-transform: uppercase;
+            }
+        }
+    
+        button.switch:focus {
+            outline:0;
+            box-shadow: 0px 1px 9px 0px $color-medGrey;
+        }
+    
+        button.switch:hover {
+            cursor: pointer;
+        }
+        
+        [role="switch"][aria-checked="false"] :first-child,
+        [role="switch"][aria-checked="true"] :last-child {
+            background-image: linear-gradient(to bottom right, $design1-gradient);
+            color: $color-white;
+            border-radius:20px;
+            font-weight: bold;
+        }
+        
+        [role="switch"][aria-checked="false"] :last-child,
+        [role="switch"][aria-checked="true"] :first-child {
+            color: $color-lightGrey;
+        }
+    }
+    
+    .design-2 {
+        button.switch {
+            border: 1px solid #ddd;
+            padding:0px;
+            background:#f9f9f9;
+            border-radius:5px;
+            vertical-align: middle;
+            display: inline-grid;
+            grid-template-columns: auto auto;
+            outline:none;
+            font-weight: bold;
+    
+            span {
+                pointer-events: none;
+                padding:15px;
+                text-transform: uppercase;
+            }
+        }
+    
+        button.switch:focus {
+            outline:0;
+            box-shadow: 3px 0px 21px 0px #ccc;
+        }
+    
+        button.switch:hover {
+            cursor: pointer;
+        }
+        
+        [role="switch"][aria-checked="false"] :first-child{
+            color: $color-white;
+            background-image: linear-gradient(180deg, $design2-toggleOff );
+            border-radius: 3px 0px 0px 3px;
+            box-shadow: $design2-box-shadow-inset #950E0E;
+        }
+
+        [role="switch"][aria-checked="false"] :last-child{
+            color: transparent;
+            box-shadow: $design2-box-shadow-inset #ddd ;
+        }
+
+        [role="switch"][aria-checked="true"] :last-child {
+            background-image: linear-gradient(180deg, $design2-toggleOn);
+            color: $color-white;
+            border-radius:0px 3px 3px 0px;
+            box-shadow: $design2-box-shadow-inset #163C1C;
+        }
+
+        [role="switch"][aria-checked="true"] :first-child {
+            color:transparent;
+            box-shadow: 1px 0px 5px 0px #ddd inset;
+        }
     }
 
-    button.switch:hover {
-        cursor: pointer;
+    .design-3 {
+        span.checkbox.switcher label input{
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
+        }
+
+        span.checkbox.switcher label input:focus + span, 
+        span.checkbox.switcher label input:checked:focus + span  {
+            outline: 0;
+            box-shadow: 0px 0px 9px -1px #ffca05fa, 0px 0px 7px -1px #777 inset;
+        }
+
+        span.checkbox.switcher label input + span {
+            position:relative;
+            display: inline-block;
+            margin-right: 10px;
+            width:65px;
+            height:20px;
+            border-radius:50px;
+            border:1px solid #aaa;
+            transition:all 0.3s ease-in-out;
+            cursor:pointer;
+            background: #ddd;
+            box-shadow:0px 0px 7px -1px #777 inset;
+
+        }
+
+        span.checkbox.switcher label input + span small {
+            position:absolute;
+            display:block;
+            background:linear-gradient(45deg, #bbb, $color-white);
+            box-shadow: 0px 0px 9px -1px $color-medGrey;
+            border-radius:50%;
+            transition: all 0.3s ease-in-out;
+            top: -6px;
+            width: 30px;
+            left: 4px;
+            height: 30px;
+            border: 1px solid #ddd;
+        }
+
+        span.checkbox.switcher label input:checked + span small {
+            background:linear-gradient(45deg, #497902, #7CCB02);
+            box-shadow: 0px 0px 9px -1px $color-medGrey;
+            left:40%;
+        }
     }
-    
-    [role="switch"][aria-checked="false"] :first-child,
-    [role="switch"][aria-checked="true"] :last-child {
-        background-image: linear-gradient(to bottom right, $design1-gradient);
-        color: $color-white;
-        border-radius:20px;
-        font-weight: bold;
-    }
-    
-    [role="switch"][aria-checked="false"] :last-child,
-    [role="switch"][aria-checked="true"] :first-child {
-        color: $color-lightGrey;
-    }
-    
-    label {
-        font-size: $label-font-size;
-        user-select: none;
-        vertical-align: middle;
+    .design-4 {
+        span.checkbox.switcher label input{
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
+        }
+
+        span.checkbox.switcher label input:focus + span, 
+        span.checkbox.switcher label input:checked:focus + span  {
+            outline: 0;
+            box-shadow: 0px 0px 9px -1px $color-medGrey, 0px 0px 9px -1px #999 inset;
+            
+        }
+
+        span.checkbox.switcher label input + span {
+            position:relative;
+            display: inline-block;
+            margin-right: 10px;
+            width:75px;
+            height:40px;
+            border-radius:50px;
+            border:1px solid #eee;
+            transition:all 0.3s ease-in-out;
+            cursor:pointer;
+            background: #ddd;
+            box-shadow: 0px 0px 9px -1px $color-medGrey inset;
+        }
+
+        span.checkbox.switcher label input + span small {
+            position:absolute;
+            display:block;
+            background: $color-white;
+            border-radius:50%;
+            transition: all 0.3s ease-in-out;
+            left: 1px;
+            top: 2px;
+            width: 36px;
+            height: 36px;
+        }
+
+        span.checkbox.switcher label input:checked + span {
+            background: #3596D7;
+            box-shadow: 1px 0px 5px 0px #6471ed inset;
+        }
+
+        span.checkbox.switcher label input:checked + span small {
+            background:$color-white;
+            left:50%;
+        }
     }
 }
