@@ -30,6 +30,7 @@ section {
             font-size: $label-font-size;
             user-select: none;
             vertical-align: middle;
+            cursor: pointer;
         }
     }
 
@@ -208,6 +209,7 @@ section {
             cursor:pointer;
             background: #ddd;
             box-shadow: 0px 0px 9px -1px $color-medGrey inset;
+            vertical-align: middle;
         }
 
         span.checkbox.switcher label input + span small {

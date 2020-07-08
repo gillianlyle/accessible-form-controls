@@ -19,6 +19,7 @@ section .design label {
   font-size: 16px;
   user-select: none;
   vertical-align: middle;
+  cursor: pointer;
 }
 section .design-1 button.switch {
   border: 2px solid #333;
@@ -166,6 +167,7 @@ section .design-4 span.checkbox.switcher label input + span {
   cursor: pointer;
   background: #ddd;
   box-shadow: 0px 0px 9px -1px #333 inset;
+  vertical-align: middle;
 }
 section .design-4 span.checkbox.switcher label input + span small {
   position: absolute;
