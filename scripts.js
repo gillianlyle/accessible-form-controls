@@ -1,4 +1,4 @@
-/* Design 1 - Toggle switch using button element */
+/* Toggle switch using button element */
 document.querySelectorAll(".switch").forEach(function(toggleSwitch) {
     toggleSwitch.addEventListener("click", handleClick, false);
 });
